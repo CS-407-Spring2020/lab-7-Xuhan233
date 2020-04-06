@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         notificationManager = NotificationManagerCompat.from(this);
 
-        editTextTitle = findViewById(R.id.title);
-        editTextMessage = findViewById(R.id.message);
+        editTextTitle = findViewById(R.id.edit_text_title);
+        editTextMessage = findViewById(R.id.edit_text_message);
     }
 
     public void sendOnChannel1 (View v){
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent actionIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
-                .setSmallIcon(R.drawable.ic_adb_black_24dp)
+                .setSmallIcon(R.drawable.ic_chat_black_24dp)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         String message = editTextMessage.getText().toString();
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
-                .setSmallIcon(R.drawable.ic_message_black_24dp)
+                .setSmallIcon(R.drawable.ic_send_black_24dp)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
